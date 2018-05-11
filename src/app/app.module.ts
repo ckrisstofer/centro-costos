@@ -4,19 +4,21 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { VerticalNavBarComponent } from './vertical-nav-bar/vertical-nav-bar.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
-import { CenterContentComponent } from './center-content/center-content.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     VerticalNavBarComponent,
     TopBarComponent,
-    CenterContentComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    HomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
