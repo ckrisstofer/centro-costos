@@ -6,7 +6,11 @@ import { VerticalNavBarComponent } from './vertical-nav-bar/vertical-nav-bar.com
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { HomeComponent } from './home/home.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent }
+];
 
 @NgModule({
   declarations: [
@@ -18,7 +22,10 @@ import { AppRoutingModule } from './/app-routing.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
