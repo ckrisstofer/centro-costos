@@ -7,9 +7,13 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
+import { UsuariosModule, listUsuariosComponent} from './usuarios/usuarios.module';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent }
+  { path: '', component: HomeComponent },
+  { path: 'inicio', component: HomeComponent },
+  { path: 'usuarios', component: listUsuariosComponent }
+  
 ];
 
 @NgModule({
@@ -18,14 +22,15 @@ const appRoutes: Routes = [
     VerticalNavBarComponent,
     TopBarComponent,
     BreadcrumbsComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
-    )
+    ),
+    UsuariosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
