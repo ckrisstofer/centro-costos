@@ -1,13 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListUsuariosComponent } from './list-usuarios/list-usuarios.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: 'usuarios', component: ListUsuariosComponent }
+];
 
 @NgModule({
   declarations: [
     ListUsuariosComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    ),
   ],
   exports: [
     ListUsuariosComponent
@@ -15,4 +24,3 @@ import { ListUsuariosComponent } from './list-usuarios/list-usuarios.component';
 
 })
 export class UsuariosModule { }
-export const listUsuariosComponent = ListUsuariosComponent;
